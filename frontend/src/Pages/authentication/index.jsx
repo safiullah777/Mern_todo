@@ -1,10 +1,11 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router";
-import FrontPage from "../FrontPage";
 import "./style.css";
 const Authenticate = () => {
-  const { loginWithPopup } = useAuth0();
+  const { loginWithPopup,isAuthenticated } = useAuth0();
+  if(isAuthenticated){
+    return <Navigate to='/' />
+  }
   return (
     <div className="authpage">
       <h1>Can not access</h1>
