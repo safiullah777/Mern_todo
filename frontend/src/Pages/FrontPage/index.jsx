@@ -4,7 +4,6 @@ import Inputs from "../../components/Inputs";
 import Buttons from "../../components/buttons/index";
 import SimpleAccordion from "../../components/accordian";
 import { useAuth0 } from "@auth0/auth0-react";
-import Authenticate from "../authentication/index";
 import { Avatar } from "@mui/material";
 import axios from "axios";
 import {
@@ -19,8 +18,6 @@ const FrontPage = () => {
     isAuthenticated,
     user,
     logout,
-    loginWithRedirect,
-    getAccessTokenSilently,
   } = useAuth0();
 
   const [clickForm, setClickForm] = useState(false);
